@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Css Clase</title>
+</head>
+<body>
+    <style>
+       
+        /* div#div1.div1{
+            height: 200px;
+            width: 200px;
+            background-color: aqua;
+        }
+        div#div1.div1 div{
+            height: 150px;
+            width: 150px;
+            background-color: rgb(51, 255, 0);
+        } */
+        /* div[type='number']{
+            height: 200px;
+            width: 200px;
+            background-color: aqua;
+        } */
+       /* #div1 {
+            font-size: 10vw;
+            height: 200px;
+            width: 100%;
+            background-color: black;
+       }
+       #div2{
+        background-color: brown;
+        height: 15em;
+       } */
+       div{
+            /* background-color: rgb(255, 145, 0);
+            background-image: url("img/css/1.jpg");
+            background-repeat: no-repeat;
+            background-position: left bottom;
+            background-attachment:local;
+           background: rgb(255, 145, 0) url("img/css/1.jpg") no-repeat left bottom local;
+           */
+           width: 80%;
+            height: 400px;
+            border-width:1px;
+            border-style :solid;
+            border-color:Black;
+            border-radius: 25px;
+            /* margin: 10px; */
+            margin-top: 10px;
+            margin-bottom: 10px;
+            margin-left: 10px;
+            margin-right: 10px;
+
+            color: rgb(0, 0, 0);            
+            text-align:center;
+            /* The text-align-last property specifies how to align the last line of a text. */
+          
+       }
+       div:hover{
+        border-color: red;
+       }
+       a{   
+        color: brown;
+            text-decoration: none;
+           }
+        a:visited{
+            color: green;
+        }
+        a:active{
+            color: yellow;
+        }
+        a:hover{
+            color: cyan;
+        }
+        .lista{
+            /* list-style-image:url("img/imagen1.png"); */
+            list-style-position :inside;
+            list-style-type:georgian;
+            list-style:  none;
+        }
+        li::before {
+        content: '';
+        display: inline-block;
+        height: 10px;
+        width: 10px;
+        background-image: url("img/imagen1.png");
+        }
+        .div1{
+            height: 100px;
+            width: 100px;
+            background-color: aqua;
+        }
+        .div2{
+            height: 100px;
+            width: 100px;
+            background-color: rgb(0, 17, 255);
+        }
+        .divhijo{
+            height: 50px;
+            width: 50px;
+            background-color: rgb(0, 255, 30) !important;
+        }
+        .divhijo2{
+            height: 50px;
+            width: 50px;
+            background-color: rgb(255, 64, 0);
+        }
+        .positions{
+            position: static;
+            position: absolute;
+            position: relative;
+            position: fixed;
+            position: sticky;
+            z-index: -1;
+        }
+        #hijo1{
+            background-color: rgb(61, 146, 146);
+        }
+body {
+  background-color: rgb(210, 140, 140);
+}
+
+/* On screens that are 992px or less, set the background color to blue */
+@media screen and (max-width: 400px) {
+  body {
+    background-color: rgb(2, 2, 249);
+  }
+}
+
+/* On screens that are 600px or less, set the background color to olive */
+@media screen and (max-width:300px) {
+  body {
+    background-color: rgb(0, 0, 0);
+  }
+}
+    </style>
+    <div class="div1">
+        <div class="divhijo" id="hijo1" style="background-color: black;"></div>
+        <div class="divhijo2"></div>
+    </div>
+    <div class="div2"></div>
+    
+    
+
+    
+</body>
+</html>

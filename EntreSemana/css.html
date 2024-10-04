@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../vendors/bootstrap/bootstrap.min.css">
+   
+</head>
+<body>
+    <style>
+        /* Selectores */
+        p {
+            color: red;
+            font-size: 30px;   
+        }
+
+        .selector-clase{
+
+        }
+            .contenido{
+                background-color: green;
+            }
+        #selector-id{
+
+        }
+            #primerDiv{
+                margin:10px;
+                padding: 10px;
+                background-color: blue;
+            }
+            #letraS{
+                color: green;
+            }
+        
+        input[name="nombre"]{
+            color: red;
+            border: 1px solid red;
+        }
+        .padre{
+            background-color: black;
+            width: 80%;
+        }
+
+        .padre .hijo {
+            color: aqua;
+            background-color: chartreuse;
+            width: 50%;
+        }
+        #padre #hijo{
+            background-color: aqua;
+        }
+
+        .clase1.clase2{
+            background-color: chocolate;
+        }
+        .clase1-1 , .clase2-2{
+            background-color: blue;
+        }
+
+        .definir-color{
+            color: blue;
+        }
+        .definir-color2{
+            color: rgb(166, 255, 0);
+        }
+        .definir-color3{
+            color: rgba(166, 255, 0, 0.564);
+        }
+        .definir-color4{
+            color: #ffa;
+        }
+        .definir-color5{
+            color: hsl(10%, 50%, 10%);
+        }
+        .definir-color6{
+            color: hsla(102, 64%, 83%, 1);
+        }
+
+        .background{
+            height: 50vh;
+            width: 50vw;
+            background-color: bisque;
+            background-image: url(https://img.freepik.com/vector-premium/textura-angustiada-grunge_1102-1279.jpg?w=2000);
+            background-repeat: no-repeat;
+            background-position: right top;
+            background-attachment: fixed; 
+            background-size: contain; 
+            
+            /* background:blue url(https://img.freepik.com/vector-premium/textura-angustiada-grunge_1102-1279.jpg?w=2000) no-repeat right top fixed contain; */
+           }
+
+        .borders{
+            height: 50vh;
+            width: 50vw;
+            border-color: black;
+            border-style:solid;
+            border-width: 10px;
+            border-radius: 10px;
+
+            /* border: 10px black solid ; */
+        }
+        .margin{
+            margin-top: 10px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            margin-left: 10px;
+            /* margin: 10px 10px 10px 10px; */
+            
+        }
+        .height-width{
+            background-color: red;
+            min-width: 10px;
+            max-width: 100px;
+            width: 10px;
+            min-height: 10px;
+            max-height: 100px;
+            height: 10px;
+        }
+        .outline{
+            outline-style: solid;
+            outline-color: aqua;
+            outline-width: 5px;
+            outline-offset: 10px;
+        }
+        .text{
+            color: brown;            
+            text-align:center;
+            text-align-last:justify;  /* The text-align-last property specifies how to align the last line of a text. */
+            direction: ltr;
+            unicode-bidi:bidi-override;
+            vertical-align:top;
+            text-transform: capitalize;
+            text-shadow: 2px 2px 5px red; 
+              /* Ancho de sombra, alto de sombra, difuminación de la sombra, color  */
+        }
+        .text-decoration{
+            
+            text-decoration-line:overline;
+            text-decoration-style: solid;
+            text-decoration-color:red;                
+            text-decoration-thickness:5px;
+            text-decoration-skip-ink:none;
+            text-decoration:none;
+
+        }
+        .text-spacing{
+            
+            text-indent:10px ;
+            letter-spacing :10px ;
+            line-height:10px ;
+            word-spacing:10px ;
+            white-space:10px ;
+
+        }
+        .font{
+            
+            font-style: italic;
+            font-variant:normal  ;
+            font-weight:100;
+            font-size :large; line-height: 10px;
+            font-family:'Times New Roman', Times, serif;
+
+        }
+        .link:hover{
+            color: green    ;
+        }
+        .link:visited{
+            color: red;
+        }
+        .link:active{
+            color: blue;
+        }
+        .link{
+            color: red;
+        }
+        .positions{
+            position: static;
+            position: absolute;
+            position: relative;
+            position: fixed;
+            position: sticky;
+            z-index: -1;
+        }
+        .overflow{
+            overflow: hidden;
+            overflow: scroll;
+            overflow: visible;
+            overflow: auto;
+
+            overflow-wrap: normal;
+            /* overflow-wrap: normal|anywhere|break-word|initial|inherit; */
+            overflow-y: auto;
+            overflow-x: auto;
+        }
+        
+        .caja2{
+            height: 50px;
+            width: 50px;
+            background-color: rgb(255, 0, 0);
+        }
+        .float{
+            float: left;
+            float: right;
+            clear: right;
+            clear: both;
+        }
+
+        /* Specificity Hierarchy
+
+    Every CSS selector has its place in the specificity hierarchy.
+
+    There are four categories which define the specificity level of a selector:
+
+        Inline styles - Example: <h1 style="color: pink;">
+        IDs - Example: #navbar
+        Classes, pseudo-classes, attribute selectors - Example: .test, :hover, [href]
+        Elements and pseudo-elements - Example: h1, :before
+    */
+        #caja1{
+            height: 100px;
+            width: 100px;
+            background-color: rgb(43, 0, 255);
+        }
+        .caja1{
+            height: 100px;
+            width: 100px;
+            background-color: aqua;
+        }       
+        article{
+            height: 100px;
+            width: 100px;
+            background-color: rgb(255, 0, 0);
+        }
+
+        /* Set the background color of body to tan */
+    body {
+    background-color: tan;
+    }
+
+    /* On screens that are 992px or less, set the background color to blue */
+    @media screen and (max-width: 992px) {
+    body {
+        background-color: blue;
+    }
+    }
+
+    /* On screens that are 600px or less, set the background color to olive */
+    @media screen and (max-width: 560px) {
+    body {
+        background-color: olive;
+    }
+    }
+
+    .cajaGrid{
+        border: 1px solid black;
+    
+        background-color: white;
+    }
+    .cajaFlex{
+        border: 1px solid black;
+        height: 50px;
+        width: 50px;
+        background-color: white;
+    }
+    </style>
+    <div style="display: none;">
+        <div class="" id="primerDiv">
+            <p class="contenido">Esto es un parrafo de prueba</p>
+        </div>
+        <p class="contenido" > Este e<span id="letraS">s</span> otro parrafo</p>
+        <input type="text" name="nombre" id="">
+    
+        <div class="padre">
+            <div class="hijo">
+                Soy el hijo
+            </div>
+        </div>
+        <div id="padre">
+            <div id="hijo">
+                Soy el hijo
+            </div>
+        </div>
+        <div class="clase1 clase2">
+            Soy un div con la clase 1 y la calse 2
+        </div>
+        <div class="clase1-1">
+            Soy un elemento con la clase 1-1
+        </div>
+        <div class="clase2-2">
+            Soy un elemento con la clase 2-2
+        </div>
+        <div class="background">
+
+        </div>
+        <div class="borders">
+
+        </div>
+        <div class="borders outline">
+
+        </div>
+        <div>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi qui consequatur, amet perferendis voluptatum ipsum quas. Odit neque voluptatibus, deserunt, similique quia necessitatibus officiis provident corporis aliquam, enim voluptate. Consequatur.
+                </div>
+            
+                <a href="http://amazon.com"  class="link"> amazon</a>
+                <div>
+                    <ul>
+                        <li>Elemento 1</li>
+                        <li>Elemento 2</li>
+                        <li>Elemento 3</li>
+                    </ul>
+                </div>
+    </div>
+    
+    <!-- <article class="caja1" id="caja1" style="display: none;"></article>
+    <div class="caja2"></div> -->
+    
+   
+   <!-- <div style="display: grid;">
+        <div class="cajaGrid">1</div>
+        <div class="cajaGrid">2</div>
+        <div class="cajaGrid">3</div>
+        <div class="cajaGrid">4</div>
+        <div class="cajaGrid">5</div>
+        <div class="cajaGrid">6</div>
+        <div class="cajaGrid">7</div>
+        <div class="cajaGrid">8</div>
+        <div class="cajaGrid">9</div>
+   </div> -->
+    
+   <!-- <div style="display: flex;">
+    <div class="cajaFlex">1</div>
+    <div class="cajaFlex">2</div>
+    <div class="cajaFlex">3</div>
+    <div class="cajaFlex">4</div>
+    <div class="cajaFlex">5</div>
+    <div class="cajaFlex">6</div>
+    <div class="cajaFlex">7</div>
+    <div class="cajaFlex">8</div>
+    <div class="cajaFlex">9</div>
+   </div> -->
+
+    <div class="d-flex my-2 flex-wrap flex-colum">
+        <button class="btn btn-primary">Soy un boton </button>
+    </div>
+    <nav aria-label="Page navigation example">
+        <ul class="pagination">
+          <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+          <li class="page-item"><a class="page-link" href="#">1</a></li>
+          <li class="page-item"><a class="page-link" href="#">2</a></li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+          <li class="page-item"><a class="page-link" href="#">Next</a></li>
+        </ul>
+      </nav>
+</body>
+</html>

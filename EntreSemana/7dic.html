@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script type="text/javascript">
+        // link https://www.hackerrank.com/challenges/js10-arrays/problem?isFullScreen=true
+        // dado una array de numeros ([3,2,1,5,4]) encuenta el segundo más grande 
+        function segundaMasGrande(nums){
+            let masGrande = 0;
+            let posisonMasGrande;
+            for (let i = 0; i < nums.length; i++) {
+                const elemento =nums[i];
+                if(elemento> masGrande){
+                    masGrande=elemento;
+                    posisonMasGrande=i;
+                }
+            }
+            let segundoMasGrandeVal=0;
+            for (let i = 0; i < nums.length; i++) {
+                if(i!=posisonMasGrande){
+                    const elemento =nums[i];
+                    if(elemento > segundoMasGrandeVal && elemento<masGrande){
+                    segundoMasGrandeVal=elemento;
+                    }
+                }
+            }
+
+
+            return segundoMasGrandeVal;
+        }
+        function getSecondLargest(nums) {
+            // Complete the function
+            nums.sort((a,b)=>{ return b-a })
+            let firstLargest=nums[0];
+            let secondLargest;
+            for (let i =0;i<nums.length;i++){
+                if(nums[i]<firstLargest){
+                    secondLargest=nums[i];
+                    break;
+                } 
+            }
+            
+
+            return secondLargest;
+            
+        }
+
+        // link https://www.hackerrank.com/challenges/js10-try-catch-and-finally/problem?isFullScreen=true
+        /* realiza una función que invierta un string mandado por parametro he imprimielo en una linea nueva
+            ejemplo  ("Hola")-> resultado "aloH"
+            si en el proceso llegara a haber un error, imprime el error y el texto sin invertir 
+            ejemplo : Error X
+                     "Hola"
+
+            utilizar las funcines Split que es excplusiva de strings
+            es una funcion que divide el tecto respecto al divisor dado y nos retorna un array ejemplo
+                let s="Hola Mundo"
+                s.split(" ") como resltado dara ["Hola", "Mundo"]
+                s.split("") como resultado dara ["H","o","l","a"," ","M","u","n","d","o"]
+                s.split("o") como resultado daria ["H","la Mund",""]
+
+            Utilizar la funcion reverse que es exclusiva de arrays
+                let ar = [1,2,3,4]
+                ar.reverse() da como resultado [4,3,2,1]
+
+            utilizar la funcion join que es una funcion exclusiva de arrays
+            let ar = [1,2,3,4]
+            ar.join("") da como resultado "1234"
+            ar.join(" ") da como resultado "1 2 3 4"
+            ar.join("a") da como resultado 1a2a3a4
+        */
+        function reverseString(s) {
+            try{
+                let result=s.split("");
+                console.log(result.reverse().join(""))
+            }catch (err){
+                console.log(err.message);
+                console.log(s)
+            }
+        }
+
+        /*
+        Link https://www.hackerrank.com/challenges/js10-throw/problem?isFullScreen=true
+        *  Completa la funcion isPositive
+        * Si 'a' es positiva, returna "YES".
+        * Si 'a' es 0,  arroja un error con el mensaje  "Zero Error"
+        * Si 'a' es negativa, arroja un error con el mensaje "Negative Error"
+        */
+        function isPositive(a) {
+            if (a==0){
+                throw new Error("Zero Error");
+            }        
+            if (a<0){
+                throw new Error("Negative Error");
+            }        
+            return "YES"
+        }
+
+        /*
+            link https://www.hackerrank.com/challenges/js10-objects/problem?isFullScreen=true
+            la funcion rectangulo retorna un objeto que tiene como propiedade
+            alto ("length") que es igual al parametro a
+            ancho ("width ") que es igual al parametro b
+            parimetro ("perimeter ") que es igual a 2 veces la suma del ancho y el alto 
+            area que es igual a la multiplicacion del alto por el ancho 
+
+        */
+        function Rectangle(a, b) {
+            // let rectangulo ={
+            //     length:a,
+            //     width:b,
+            //     perimeter:function ()
+            //     { return 2*( this.length+this.width)},
+            //     area: function (){ return this.width*this.length}
+            // }    
+            // return rectangulo;
+            return {
+                length:a,
+                width:b,
+                perimeter:2*(a+b),
+                area:a*b
+            }
+        }
+        /*
+        LINK https://www.hackerrank.com/challenges/js10-count-objects/problem?isFullScreen=true
+       la función getCount recibe por parametro un array de objetos ejemplo [{x:0,y:0},{x:3,y:2},{x:2,y:2}]
+
+       el ejercicio pide que la funcion retorne la cantidad de objetos que cumple la codicon 
+       de que x==y de cada objeto espectivamente
+
+       ejemplo getCount([{x:0,y:0},{x:3,y:2},{x:2,y:2}]) daria como resultado 2
+        */
+        function getCount(objects) {
+            let count=0;
+            // forma 1;
+            // objects.map(e=>{
+            //     if(e.x==e.y){
+            //         count++;
+            //     }
+            // })
+            for (let i = 0; i < objects.length; i++) {
+                const el = objects[i];
+                if(el.x==el.y){
+                    count++;
+                }
+            }
+            return count;
+        }
+        /*
+            link    https://www.hackerrank.com/challenges/js10-arrows/problem?isFullScreen=true
+
+            la funcion modifyArray recibe un array de numeros ejemplo [1,2,3,4,5]
+            la funcion debe de retornar un array del mismo tamaño pero si el numero es par multiplicarlo por 2
+            y si es impar multiplicarlo por 3 
+
+            utiliza arrow functions
+
+            ejemplo modifyArray([1,2,3,4,5]) el resultado seria [3,4,9,8,15]
+        */
+
+        function modifyArray(nums) {
+
+           return nums.map((e)=>{
+                if(e%2==0){
+                    return e*2;
+                }else{
+                    return e*3;
+                }
+            })
+            
+        }
+
+
+    </script>
+</body>
+</html>

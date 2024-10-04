@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS</title>
+</head>
+
+<body>
+    <!-- <div onclick="divClick()"> -->
+        <!-- <div onclick="alert('Diste click al div')"> -->
+        <div >
+        Lorem ipsum dolor sit, amet consectetur adipisicing 
+        elit. Aut fuga dolore debitis voluptatibus nulla 
+        itaque porro iste aperiam, fugiat cupiditate. 
+        Architecto expedita aliquam earum esse nulla 
+        perferendis optio, minus sequi.
+
+    </div>
+    <label for="">Cuantas veces haz precionado el boton?</label>
+    <input type="number" name="" id="clicks" value="0">
+    <button onclick="add1()">Precioname!</button>
+
+        <script type="text/javascript">
+        // Comentario
+        //variables var ya no se utiliza
+
+        var Variable1, va3, va4, va5;
+        var Variable1;
+        //block scoped declarando variables
+        let Variable2, va6;
+        // definiendo variables
+        Variable2 = 2; va6 = "texto";
+        // se declara y se define al mismo tiempo
+        const Variable3 = 2;
+
+        //tipos de variables
+        let string1 = "Hola1";//string
+        let int1 = 1;//entero
+        let float1 = 1.2;//flotante o decimal
+        let objeto = { id: 2, nombre: "Juan", apellido:"Perze", promedio: 7.5,nombreCompleto: function(){ return this.nombre+" "+this.apellido;} }     // objeto
+        let array = [1, 2, 3]//array vectores/matrices
+
+        //operadores aritmeticos
+
+        let x = 2;
+        let y = 5;
+
+        //suma 
+        let suma = x + y;
+        //resta
+        let resta = y - x;
+        //multiplicación
+        let milti = x * y;
+        //división
+        let div = y / x;
+        //residuo o modulo
+        let mod = y % x;
+        // exponencioal
+        let expo = y ** x;
+        // incrementar en 1
+        let incre = x++;
+        // decremetar en 1
+        let decre = x--;
+
+        //Opreaciones de asignación
+        //a la x le sumo y asignandole el valor del resultado a x
+        x += y
+        //a la x le resto y asignandole el valor del resultado a x
+        x -= y
+        //a la x le multiplico y asignandole el valor del resultado a x
+        x *= y
+        //a la x saco modulo respocto y asignandole el valor del resultado a x
+        x %= y
+        //a la x la exponencio y asignandole el valor del resultado a x
+        x **= y
+
+        //JS outputs
+
+        document.write("Hola Mundo");
+        // console.log("Holas Mundo");
+        // alert("Holas Mundo");
+        document.getElementsByTagName("body")[0].innerHTML += "Holas Mundo"
+
+        //se declara usando la flag function despues el nombre luego parametro 
+        //{ } luego dentro de las llaves se pone la logica 
+
+
+        function fun1(par1) {
+            return par1;
+        }
+        function fnSuma(array) {
+            let total = 0;
+            for (let i = 0; i < array.length; i++) {
+                total += array[i];
+            }
+            return total;
+        }
+        let Suma2 = (array) => {
+            let total = 0;
+            for (let i = 0; i < array.length; i++) {
+                total += array[i];
+            }
+            return total;
+        }
+
+
+        let totalPedidos = [120, 130, 50, 15, 20];
+        totalPedidos = fnSuma(totalPedidos);
+
+        //console.log("Este es el total de pedidos:", totalPedidos);
+        
+        //funcion llamada atraves de un evento
+
+        function divClick(){
+            alert("Estas dentro del div");
+        }
+        function divIn(){
+            this.style.background="red"
+        }
+        function divOut(){
+            this.style.background="none"
+        }
+        // agregar un evento a un elemento html desde JS
+        document.getElementsByTagName("div")[0].addEventListener("mouseover",divIn)
+        document.getElementsByTagName("div")[0].addEventListener("mouseleave",divOut)
+        
+        function add1(){
+            document.getElementById("clicks").value++;
+        }
+        
+        //comparadores
+        //igual
+        x==y
+        //identidad
+        x===y
+        //diferente
+        x!=y
+        //diferente tipo
+        x!==y
+        /// mayo que 
+        x > y
+        // menor que
+        x < y
+        /// mayor o igual que 
+        x >= y
+        // menor o igual  que
+        x <= y
+
+        //Logicos
+            //&& and
+            //|| OR
+            //! not 
+        // condicionales If
+        if (5>6) {
+            
+        }else if (5>4) {
+            
+        } else {
+            
+        }
+        /// COndicional Siwch
+        switch (x) {
+            case 1:
+                
+                break;
+            case 2:
+                
+                break;
+            default:
+
+                break;
+        }
+        //Condicines Ternaria
+        let esVerdad = (5>6)? true  : false;
+
+        // iterador for
+        for (let index = 0; index < array.length; index++) {
+            const element = array[index];
+            
+        }
+        // iterador for each
+        array.forEach(function(a,b,c) {
+           // console.log(a,b,c)
+        });
+        // iterador while
+        let i=0; 
+        while (i<10) {
+           // console.log(i);
+            i++;
+        }
+        //iterador map
+        array.map(function(a,b,c) {
+           // console.log(a,b,c)
+        })
+
+        function prueba (dec,float,str) {
+            const dec1=2;
+            const float1=2.5;
+            const str1="Holas";
+            
+            console.log(dec1+parseInt(dec));
+            console.log(float1+parseFloat(float));
+            console.log(str1+str);
+          }
+         /// try catch
+          try {
+            
+          } catch (error) {
+            console.log(error);
+          }
+          //grade = score > 25 ? "A" : (score > 20 ? "B" : (score > 15 ? "C" : (score > 10 ? "D" : (score > 10 ? "E" : "F"))))
+          
+          function getLetter(s) {
+            let letter;
+            const firstLetter = s[0];
+
+    switch (firstLetter){
+        case "a": case "e": case"i": case "o": case "u":
+            letter="A"
+        break;
+        case "b": case "c": case"d": case "f": case "g":
+            letter="B"
+        break;
+        case "h": case "j": case"k": case "l": case "m":
+            letter="C"
+        break;
+        case "n":
+        case "p":
+        case "q":
+        case "r":
+        case "s":
+        case "t":
+        case "v":
+        case "w":
+        case "x":
+        case "y":
+        case "z":
+            letter="D"
+        break;
+    }
+    // Write your code here
+    
+    return letter;
+}
+function vowelsAndConsonants(s) {
+    let arrV=[];
+    let arrC=[];
+    for(let i = 0 ; i<s.length;i++){
+        const e=s[i];
+        if (e=="a"||e=="e"||e=="i"||e=="o"||e=="u"){
+            arrV.push(e);
+        }else{
+            arrC.push(e);
+        }
+    }
+    arrV.map(function (e){
+        console.log(e)
+    })
+    arrC.map(function (e){
+        console.log(e)
+    })
+}
+
+    let Ordenar = [2,3,8,7,4,5,8,6,2,4,6,7];
+    let ordenar1=Ordenar;
+    // ordenar de mayor a menor
+    Ordenar.sort(function (a,b) { return b-a });
+     // ordenar de menor a mayor
+     Ordenar.sort(function (a,b) { return b-a });
+
+    function getSecondLargest(nums) {
+        // Complete the function
+        nums.sort((a,b)=>{ return b-a })
+        let firstLargest=nums[0];
+        let secondLargest;
+        for (let i =0;i<nums.length;i++){
+            if(nums[i]<firstLargest){
+                secondLargest=nums[i];
+                break;
+            } 
+        }
+        return secondLargest;
+    }    
+    function getSecondLargest1(nums) { 
+       let primerValor =0;
+       let segundoValor=0;
+
+       nums.forEach(e => {
+            if(e>primerValor){
+                primerValor=e
+            }
+        });
+        nums.forEach(e => {
+            if(e<primerValor && e>segundoValor){
+                segundoValor=e;
+            }
+        });
+
+        return segundoValor;
+     }     
+     
+     function Rectangle(a, b) {
+            return{
+                length:a,
+                width:b,
+                perimeter:2*(a+b),
+                area:a*b
+            }
+        }  
+
+        const objGetCount=[
+            {x:12,y:12},
+            {x:10,y:10},
+            {x:6,y:6},
+            {x:12,y:14}
+        ];
+        
+        function getCount(objects) {
+            let count=0;
+            objects.map(e=>{
+                if(e.x==e.y){
+                    count++;
+                }
+            })
+            return count;
+        }
+
+        
+    </script>
+    
+</body>
+
+</html>

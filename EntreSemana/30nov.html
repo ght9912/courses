@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+
+       let nombre= "Luis";
+       let apellido ="Pruneda";
+
+    //    document.write("la persona se llama "+nombre +" "+apellido);
+    //    console.log("la persona se llama "+nombre +" "+apellido);
+    //    alert("la persona se llama "+nombre +" "+apellido);
+
+       function fnSuma(array) {
+            let total = 0;
+            for (let i = 0; i < array.length; i++) {
+                total += array[i];
+            }
+            return total;
+        }
+        let Suma2 = (array) => {
+            let total = 0;
+            for (let i = 0; i < array.length; i++) {
+                total += array[i];
+            }
+            return total;
+        }
+        let cuenta = 0;
+        function divclick(){
+            cuenta ++;
+            document.getElementById("cuenta").innerHTML=cuenta;
+        }
+        const divOver=()=>{
+            const elemento =document.getElementById("miDiv");
+            elemento.style="height:30vh; width:30vw;background-color:red"
+            //alert("El mas esta sobre mi ");
+        }
+        function divLeave(){
+            const elemento =document.getElementById("miDiv"); 
+            elemento.style="height:50vh; width:50vw;background-color:black"
+            //alert("El mouse salio de mi ");
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            document.getElementById("miDiv").addEventListener("click",divclick);
+            document.getElementById("miDiv").addEventListener("mouseover",divOver);
+            document.getElementById("miDiv").addEventListener("mouseleave",divLeave);
+        
+        });
+        let array=[1,2,3];
+        array.forEach(function(a,b,c) {
+            console.log(a,b,c)
+        });
+
+        
+    </script>
+
+    <div>Soy un div </div>
+    <div id="id1">Soy un div con id1</div>
+    <div class="cl1">Soy un div con clase cl1</div>
+
+    <div id="miDiv" style="height:50vh; width:50vw; background-color: black;">
+    </div>
+    
+    <div>Soy un contador : <p id="cuenta" ></p></div>
+    <script type="text/javascript">
+      
+    </script>
+
+</body>
+</html>

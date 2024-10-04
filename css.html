@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS</title>
+    <!-- Link a archivo de estilos -->
+    <link rel="stylesheet" href="vendors/bootstrap/bootstrap.min.css">
+   
+</head>
+<body>
+    <style>
+        /* Sintaxys en imagen 1 */
+        p{
+            color: red;
+            font-size: 10px;
+        }
+
+        .selecto-de-clase{
+
+        }
+        #selecto-de-id{
+
+        }
+        selecto-html{
+
+        }
+        input[name='hola']{
+
+        }
+
+        .clase-contenedor1 .hijo-contenedor {
+            /* apunta al hijo dentro del contenedor */
+        }
+        #id-contenedorpadre #id-contenedor1{
+
+        }
+
+        .clase1.clase2{
+            /* apunta a contenedor con ambas clases */
+        }
+        .clase1 , .clase2{
+            /* apunta a contenedor con ambas clases */
+        }
+
+        .definir-color{
+            color: red;
+        }
+        .definir-color2{
+            color: rgb(166, 255, 0);
+        }
+        .definir-color3{
+            color: rgba(166, 255, 0, 0.564);
+        }
+        .definir-color4{
+            color: #ffa;
+        }
+        .definir-color5{
+            color: hsl(10%, 50%, 10%);
+        }
+        .definir-color6{
+            color: hsla(10%, 50%, 10%, .3);
+        }
+
+        /* BOX model img 2 */
+        /* unidades img 3 y 4 */
+
+        .background{
+            background-color: antiquewhite;
+            background-image: url("img_tree.png");
+            background-repeat: no-repeat;
+            background-position: right top;
+            background-attachment: fixed;
+        }
+        .border{
+            
+            border-width:6px;
+            border-style :solid;
+            border-color:aquamarine;
+            border-radius: 5px;
+            
+        }
+        .margin{
+            
+            margin-top:10px;
+            margin-right:10px;
+            margin-bottom:10px;
+            margin-left:10px;
+
+        }
+        .height-width{
+            min-width: 10px;
+            max-width: 100px;
+            width: 10px;
+            min-height: 10px;
+            max-height: 100px;
+            height: 10px;
+        }
+        /* outliner 5px */
+        .outliner{
+            
+            outline-style : solid;
+            outline-color:saddlebrown;
+            outline-width:10px;
+            outline-offset:10px;
+
+        }
+        .text{
+            color: brown;            
+            text-align:center;
+            text-align-last:justify;  /* The text-align-last property specifies how to align the last line of a text. */
+            direction: ltr;
+            unicode-bidi:bidi-override;
+            vertical-align:top;
+            text-transform: capitalize;
+            text-shadow: 2px 2px 5px red;   
+        }
+        .text-decoration{
+            
+                text-decoration-line:overline;
+                text-decoration-style: solid;
+                text-decoration-color:red;                
+                text-decoration-thickness:5px;
+                text-decoration-skip-ink:none;
+                text-decoration:none;
+
+        }
+        .text-spacing{
+            
+            text-indent:10px ;
+            letter-spacing :10px ;
+            line-height:10px ;
+            word-spacing:10px ;
+            white-space:10px ;
+
+        }
+        .font{
+            
+            font-style: italic;
+            font-variant:normal  ;
+            font-weight:100;
+            font-size :large; line-height: 10px;
+            font-family:'Times New Roman', Times, serif;
+
+        }
+         /* links state Cursors satates */
+         a:link {
+           
+        }
+        a:visited{
+
+        }
+        a:hover{
+
+        }
+        a:active{
+
+        }
+
+        .list{
+         
+            list-style-image:url("img/imagen1.png");
+            list-style-position :inside;
+            list-style-type:georgian;
+        }
+
+        .display{
+            display: none;
+            display: block;
+            display: inline;
+            display: inline-block;
+        }
+        .positions{
+            position: static;
+            position: absolute;
+            position: relative;
+            position: fixed;
+            position: sticky;
+            z-index: -1;
+        }
+        .overflow{
+            overflow: hidden;
+            overflow: scroll;
+            overflow: visible;
+            overflow: auto;
+
+            overflow-wrap: normal;
+            /* overflow-wrap: normal|anywhere|break-word|initial|inherit; */
+            overflow-y: auto;
+            overflow-x: auto;
+        }
+        .float{
+            float: left;
+            float: right;
+            clear: right;
+            clear: both;
+        }
+        .opacity{
+            opacity: 1;
+        }
+        /* Specificity Hierarchy
+
+Every CSS selector has its place in the specificity hierarchy.
+
+There are four categories which define the specificity level of a selector:
+
+    Inline styles - Example: <h1 style="color: pink;">
+    IDs - Example: #navbar
+    Classes, pseudo-classes, attribute selectors - Example: .test, :hover, [href]
+    Elements and pseudo-elements - Example: h1, :before
+ */
+
+/* Set the background color of body to tan */
+body {
+  background-color: tan;
+}
+
+/* On screens that are 992px or less, set the background color to blue */
+@media screen and (max-width: 992px) {
+  body {
+    background-color: blue;
+  }
+}
+
+/* On screens that are 600px or less, set the background color to olive */
+@media screen and (max-width: 600px) {
+  body {
+    background-color: olive;
+  }
+}
+
+/* Grid*/
+    .grid{
+        display: grid;
+    }
+
+/* Flex*/
+    .flex{
+        display: flex;
+        /* 
+    flex-direction
+    flex-wrap
+    flex-flow
+    justify-content
+    align-items
+    align-content
+ */
+    }
+    </style>
+
+</body>
+</html>
